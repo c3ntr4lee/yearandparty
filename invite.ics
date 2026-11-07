@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//c3ntr4lee//Year End Party 2026//VI
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:yearendparty-2026-1122@c3ntr4lee.github.io
+DTSTAMP:20261107T000000Z
+DTSTART:20261122T110000Z
+DTEND:20261122T150000Z
+SUMMARY:Year End Party 2026
+LOCATION:Pandora Hải Phòng
+DESCRIPTION:Tiệc tất niên Year End Party 2026 – 18:00 Chủ nhật 22/11/2026 tại Pandora Hải Phòng.\nChỉ đường: https://maps.app.goo.gl/SpweKkSUjiB8t6py9\nThiệp mời: https://c3ntr4lee.github.io/yearandparty/
+URL:https://c3ntr4lee.github.io/yearandparty/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ngày mai là Year End Party 2026!
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Còn 2 tiếng nữa là tới Year End Party 2026
+TRIGGER:-PT2H
+END:VALARM
+END:VEVENT
+END:VCALENDAR
