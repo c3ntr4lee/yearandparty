@@ -33,6 +33,12 @@ a{color:inherit}
 #fx{position:fixed;inset:0;pointer-events:none;z-index:50}
 #dust{position:fixed;inset:0;pointer-events:none;z-index:0}
 
+::selection{background:var(--g3);color:var(--night)}
+:focus-visible{outline:2px solid var(--g2);outline-offset:3px;border-radius:6px}
+html{scrollbar-color:var(--g4) var(--night)}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--night)}::-webkit-scrollbar-thumb{background:var(--g4);border-radius:8px}
+.alt a{text-underline-offset:3px;text-decoration-thickness:1px}
+@media (hover:hover){.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(212,165,72,.38)}.btn-line:hover{background:rgba(241,212,138,.07);border-color:var(--g3)}.replay:hover{background:rgba(241,212,138,.07)}.track img{transition:filter .4s ease}.track:hover img{filter:none}}
 /* ========== PHONG THƯ ========== */
 #gate{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
   background:radial-gradient(120% 80% at 50% 40%,#18214a 0%,var(--night) 70%);transition:opacity 1s var(--ease),visibility 1s}
@@ -40,7 +46,7 @@ a{color:inherit}
 .gate-to{text-align:center;transition:opacity .5s ease}
 #gate.opening .gate-to,#gate.opening .tap{opacity:0;animation:none}
 .gate-to small{display:block;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--muted)}
-.gate-to .nm{font-family:"Dancing Script",cursive;font-size:clamp(30px,9vw,42px);margin-top:6px}
+.gate-to .nm{font-family:"Dancing Script",cursive;font-size:clamp(30px,9vw,42px);margin-top:6px;color:var(--g2)}
 .env{position:relative;width:min(78vw,330px);aspect-ratio:1.45;perspective:1200px;cursor:pointer}
 .env .back,.env .front,.env .flap{position:absolute;inset:0;border-radius:6px}
 .env .back{background:linear-gradient(160deg,#1d2757,#121a3c);border:1px solid var(--line)}
@@ -76,8 +82,8 @@ section{padding:70px 0}
 .kicker::after{transform:scaleX(-1)}
 .title{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(30px,9vw,40px);text-align:center;margin-top:12px;line-height:1.15}
 .lead{text-align:center;color:var(--muted);font-size:15px;margin:10px auto 0;max-width:32ch}
-.rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-.rv.in{opacity:1;transform:none}
+.rv{opacity:.001;transition:opacity 1.1s var(--ease)}
+.rv.in{opacity:1}
 
 /* ========== HERO ========== */
 .hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:70px 0}
@@ -89,7 +95,7 @@ section{padding:70px 0}
 .c1{top:10px;left:10px;border-top-width:2px;border-left-width:2px}.c2{top:10px;right:10px;border-top-width:2px;border-right-width:2px}
 .c3{bottom:10px;left:10px;border-bottom-width:2px;border-left-width:2px}.c4{bottom:10px;right:10px;border-bottom-width:2px;border-right-width:2px}
 .hero-in{position:relative;z-index:1;padding:0 22px}
-.guest{font-family:"Dancing Script",cursive;font-size:clamp(30px,9vw,44px);margin-top:16px;min-height:1.2em}
+.guest{color:var(--g2);font-family:"Dancing Script",cursive;font-size:clamp(30px,9vw,44px);margin-top:16px;min-height:1.2em}
 .yep{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(26px,8vw,40px);letter-spacing:.12em;text-transform:uppercase;margin-top:26px}
 .yep span{display:inline-block;opacity:0;transform:translateY(.6em) rotateX(70deg);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .show .yep span{opacity:1;transform:none}
@@ -155,7 +161,8 @@ section{padding:70px 0}
 .ticket{margin-top:30px;position:relative;border-radius:18px;background:linear-gradient(170deg,#1a2350,#10173a);border:1px solid var(--line);overflow:hidden}
 .ticket::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 100% 0,rgba(241,212,138,.12),transparent 70%);pointer-events:none}
 .t-top{padding:26px 24px 22px;text-align:center}
-.t-top .evt{font-family:"Playfair Display",serif;font-size:24px}
+.t-top .evt{font-family:"Playfair Display",serif;font-size:24px;color:var(--g1)}
+.title em{font-style:italic;color:var(--g2)}
 .t-top .sub{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .perf{position:relative;height:0;border-top:2px dashed rgba(241,212,138,.3);margin:0 18px}
 .perf::before,.perf::after{content:"";position:absolute;top:-15px;width:28px;height:28px;border-radius:50%;background:var(--night)}
@@ -180,7 +187,7 @@ section{padding:70px 0}
 .finale .see{font-family:"Dancing Script",cursive;font-size:clamp(44px,14vw,70px);line-height:1.1}
 .finale p{color:var(--muted);margin-top:16px;font-size:15px}
 .replay{margin-top:28px;background:none;border:1px solid var(--line);color:var(--g2);font-family:inherit;font-size:12px;letter-spacing:.25em;text-transform:uppercase;padding:12px 22px;border-radius:999px;cursor:pointer}
-footer{text-align:center;font-size:11px;letter-spacing:.2em;color:#5d6386;padding:0 0 calc(28px + env(safe-area-inset-bottom))}
+footer{text-align:center;font-size:11px;letter-spacing:.2em;color:#80869f;padding:0 0 calc(28px + env(safe-area-inset-bottom))}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -193,8 +200,8 @@ footer{text-align:center;font-size:11px;letter-spacing:.2em;color:#5d6386;paddin
 <canvas id="fx"></canvas>
 
 <!-- PHONG THƯ -->
-<div id="gate" role="button" aria-label="Mở thiệp">
-  <div class="gate-to"><small>Thư mời gửi</small><div class="nm foil" id="gateName">Bạn thân mến</div></div>
+<div id="gate" role="button" tabindex="0" aria-label="Mở thiệp mời">
+  <div class="gate-to"><small>Thư mời gửi</small><div class="nm" id="gateName">Bạn thân mến</div></div>
   <div class="env" id="env">
     <div class="back"></div>
     <div class="letter"><b>YEAR END PARTY</b><span>2026</span></div>
@@ -215,7 +222,7 @@ footer{text-align:center;font-size:11px;letter-spacing:.2em;color:#5d6386;paddin
     <div class="frame"><i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i></div>
     <div class="hero-in">
       <div class="kicker">Trân trọng kính mời</div>
-      <div class="guest foil" id="guest"></div>
+      <div class="guest" id="guest"></div>
       <div class="yep" id="yep">Year End Party</div>
       <div class="big foil">2026</div>
       <div class="dateline"><span>22.11</span><i></i><span>18:00</span><i></i><span>PANDORA</span></div>
@@ -226,8 +233,7 @@ footer{text-align:center;font-size:11px;letter-spacing:.2em;color:#5d6386;paddin
   <!-- NHÌN LẠI -->
   <section id="recap">
     <div class="wrap">
-      <div class="kicker rv">Chương 01</div>
-      <h2 class="title rv">Nhìn lại <span class="foil">2026</span></h2>
+      <h2 class="title rv">Nhìn lại năm <em>2026</em></h2>
       <p class="lead rv">Trái cây chiều thứ Sáu, những bữa hải sản và cả những chuyến đi xa.</p>
       <div class="story rv" id="story">
         <div id="slides"></div>
@@ -249,7 +255,6 @@ footer{text-align:center;font-size:11px;letter-spacing:.2em;color:#5d6386;paddin
   <!-- ĐẾM NGƯỢC -->
   <section>
     <div class="wrap">
-      <div class="kicker rv">Chương 02</div>
       <h2 class="title rv">Còn bao lâu nữa?</h2>
       <div class="count rv" id="count">
         <div class="cell"><div class="flip"><span id="cd">--</span></div><small>Ngày</small></div>
@@ -263,10 +268,9 @@ footer{text-align:center;font-size:11px;letter-spacing:.2em;color:#5d6386;paddin
   <!-- VÉ MỜI -->
   <section>
     <div class="wrap">
-      <div class="kicker rv">Chương 03</div>
       <h2 class="title rv">Vé mời của bạn</h2>
       <div class="ticket rv">
-        <div class="t-top"><div class="evt foil">Year End Party 2026</div><div class="sub">Tiệc tất niên</div></div>
+        <div class="t-top"><div class="evt">Year End Party 2026</div><div class="sub">Tiệc tất niên</div></div>
         <div class="perf"></div>
         <div class="t-grid">
           <div><small>Ngày</small><strong>CN, 22/11/2026</strong></div>
@@ -275,8 +279,8 @@ footer{text-align:center;font-size:11px;letter-spacing:.2em;color:#5d6386;paddin
           <div class="full"><small>Khách mời</small><strong id="tName">Bạn &amp; cả team</strong></div>
         </div>
         <div class="btns">
-          <a class="btn btn-gold" id="calBtn" href="invite.ics">📅 <span id="calTxt">Thêm vào lịch điện thoại</span></a>
-          <a class="btn btn-line" href="https://maps.app.goo.gl/SpweKkSUjiB8t6py9" target="_blank" rel="noopener">🧭 Chỉ đường tới Pandora</a>
+          <a class="btn btn-gold" id="calBtn" href="invite.ics"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13.5v4M10 15.5h4"/></svg> <span id="calTxt">Thêm vào lịch điện thoại</span></a>
+          <a class="btn btn-line" href="https://maps.app.goo.gl/SpweKkSUjiB8t6py9" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg> Chỉ đường tới Pandora</a>
         </div>
         <p class="alt">Hoặc: <a id="gcal" href="#" target="_blank" rel="noopener">Google Calendar</a> · <a href="invite.ics">Lịch iPhone / Outlook</a></p>
         <div class="hint" id="hint">Bạn đang mở thiệp trong Instagram / Zalo / Facebook. Bấm <b>⋯</b> ở góc trên rồi chọn <b>Mở bằng trình duyệt</b> để thêm được vào lịch.</div>
@@ -286,7 +290,6 @@ footer{text-align:center;font-size:11px;letter-spacing:.2em;color:#5d6386;paddin
 
   <!-- KẾT -->
   <section class="finale" id="finale">
-    <div class="kicker rv">Hẹn gặp</div>
     <div class="see foil rv">Tối 22/11 nhé!</div>
     <p class="rv">Tối hôm ấy mình gác việc lại, ăn thật ngon và cùng tiễn năm 2026.</p>
     <button class="replay rv" id="replay">↺ Xem lại từ đầu</button>
@@ -345,7 +348,7 @@ var gate=$('gate'),env=$('env'),opened=false;
 function openEnv(){if(opened)return;opened=true;gate.classList.add('opening');env.classList.add('open');
   setTimeout(function(){var r=env.getBoundingClientRect();confetti(r.left+r.width/2,r.top+r.height*.3,140)},700);
   setTimeout(function(){gate.classList.add('gone');document.body.classList.remove('locked');$('hero').classList.add('show')},1700)}
-gate.addEventListener('click',openEnv);
+gate.addEventListener('click',openEnv);gate.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnv()}});gate.focus&&setTimeout(function(){try{gate.focus({preventScroll:true})}catch(_){}} ,300);
 if(reduce){gate.classList.add('gone');document.body.classList.remove('locked');$('hero').classList.add('show');opened=true}
 
 /* ---------- Ảnh + chú thích ---------- */
@@ -386,6 +389,8 @@ story.querySelectorAll('.tapzone').forEach(function(z){
   z.addEventListener('pointerleave',function(){clearTimeout(holdT);if(held){held=false;play()}});
   z.addEventListener('contextmenu',function(e){e.preventDefault()})});
 new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting&&opened?play():pause()})},{threshold:.55}).observe(story);
+story.tabIndex=0;story.setAttribute('aria-label','Album ảnh nhìn lại năm 2026, dùng phím mũi tên để chuyển ảnh');
+story.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){show(cur+1);play()}else if(e.key==='ArrowLeft'){show(cur-1);play()}else if(e.key===' '){e.preventDefault();paused?play():pause()}});
 
 /* ---------- Dải phim ---------- */
 function fill(el,arr){var h='';arr.concat(arr).forEach(function(p){h+='<img alt="" loading="lazy" src="'+p[0]+'">'});el.innerHTML=h}
@@ -396,7 +401,7 @@ var target=Date.parse('2026-11-22T18:00:00+07:00'),prev={};
 function set(id,v){if(prev[id]===v)return;prev[id]=v;var e=$(id);e.textContent=v;e.classList.remove('tick');void e.offsetWidth;e.classList.add('tick')}
 function tick(){var t=Math.max(0,target-Date.now());
   set('cd',''+Math.floor(t/864e5));set('ch',pad(Math.floor(t/36e5)%24));set('cm',pad(Math.floor(t/6e4)%60));set('cs',pad(Math.floor(t/1e3)%60));
-  if(t===0){$('count').outerHTML='<p class="lead" style="font-size:20px;color:var(--g1)">🎉 Tiệc đang diễn ra!</p>';return}
+  if(t===0){$('count').outerHTML='<p class="lead" style="font-size:20px;color:var(--g1)">Tiệc đang diễn ra, vào thôi!</p>';return}
   setTimeout(tick,1000-(Date.now()%1000))}
 tick();
 
